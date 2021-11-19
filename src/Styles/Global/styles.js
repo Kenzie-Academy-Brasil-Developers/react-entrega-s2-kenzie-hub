@@ -1,7 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  html,body,div,p,span,h1,h2,button,input,a,header{
+  html,body,div,p,span,h1,h2,button,input,a,header,section{
     margin:0;
     padding:0;
     box-sizing:border-box; 
@@ -13,15 +13,18 @@ const GlobalStyle = createGlobalStyle`
     --pink:#FF6584;
     --purple:#6C63FF;
   }
+  html{
+    width:100vw;
+    height:100vh;
+  }
   body{
     background:var(--darkBlue);
     font-family: 'Roboto Mono', monospace;
     font-size:1rem;
     color:var(--lightBege)
   }
-  h2{
-    font-family: 'Rokkitt', serif;
-    font-weight:700;
+  button,input{
+    font-family: 'Roboto Mono', monospace;
   }
   a{
     text-decoration:none;
