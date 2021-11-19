@@ -27,11 +27,14 @@ export const NewWelcome = styled.section`
   padding:16px;
   width:100%;
   background:var(--lightBege);
-  animation: ${slideToRight} 3s ease-in-out;
+  @media (min-width:768px){
+    animation: ${slideToRight} 3s ease-in-out;
+  }
+  
   h2{
     color:var(--darkBlue);
     flex-basis:240px;
-    line-height:200px;
+    line-height:120px;
     font-size:60px;
     text-align:center;
     display:block;
@@ -73,10 +76,13 @@ export const Form = styled.form`
   justify-content:stretch;
   background:var(--darkBlue);
   padding:16px;
-  animation: ${slideToLeft} 3s ease-in-out;
+  @media(min-width:768px){
+    animation: ${slideToLeft} 3s ease-in-out;
+  }
+  
   h2{
-    flex-basis:80px;
-    font-size:60px;
+    flex-basis:60px;
+    font-size:48px;
     color:var(--lightBege);
     @media (max-width:1100px){
       line-height:100px;
@@ -114,8 +120,8 @@ export const InputDiv = styled.div`
 `
 export const Input = styled.input`
   width:400px;
-  height:50px;
-  margin-top:20px;
+  height:46px;
+  margin-top:14px;
   background:${props=>props.bgDarkBlue?css`var(--darkBlue)`:css`var(--lightBege)`};
   color:${props=>props.colorBege?css`#EAE2B7`:css` #0E1137`};
   border:none;
@@ -133,7 +139,7 @@ export const Input = styled.input`
 `;
 export const LogInButton = styled(Button)`
   width:260px;
-  height:60px;
+  height:48px;
   font-size:24px;
   background-color: var(--lightBege);
   color:var(--darkBlue);
@@ -146,24 +152,35 @@ export const Quarter = styled.div`
  width:100%;
  display:flex;
  flex-direction:column;
- margin-top:10px;
+ 
  
  div{
    display:flex;
    justify-content:space-around;
    flex-wrap:wrap;
+   margin:8px 0;
    h2{
      flex:1;
       font-size:20px;
       text-align:center;
    }
  }
+ p{
+   
+   text-align:center;
+   a{
+     color:var(--pink);
+     :hover{
+       text-decoration:underline;
+     }
+   }
+ }
  button{
    font-weight:bold;
    color:var(--darkBlue);
-   margin-top:8px;
+   
    width:90px;
-   height:50px;
+   height:30px;
    font-size:16px;
    background:var(--lightBege);
    border-radius:12px;

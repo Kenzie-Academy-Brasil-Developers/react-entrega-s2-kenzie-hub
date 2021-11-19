@@ -1,5 +1,6 @@
 import styled ,{keyframes}from 'styled-components';
 import dashboardImage from './../../Assets/dashboard.png';
+
 export const Container = styled.main`
   display:flex;
   flex-direction:column;
@@ -49,7 +50,10 @@ const slideToRight = keyframes`
   }
 `
 export const Background = styled.div`
-  animation: ${slideToRight} 3s ease-in-out;
+  @media (min-width:768px){
+    animation: ${slideToRight} 3s ease-in-out;
+  }
+  
   @media screen and (min-width:1100px){
     flex:1;
     background: url(${dashboardImage}) no-repeat center;
@@ -73,7 +77,10 @@ export const Description = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:space-evenly;
-  animation :${slideToLeft} 3s ease-in-out;
+  @media (min-width:768px){
+    animation :${slideToLeft} 3s ease-in-out;
+  }
+  
   p{
     padding-right:32px;
     font-size:34px;

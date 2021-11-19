@@ -25,7 +25,10 @@ export const Welcome = styled.section`
   align-items:stretch;
   justify-content:space-evenly;
   padding:16px;
-  animation: ${slideToDown} 3s ease-in-out;
+  @media (min-width:768px){
+    animation: ${slideToDown} 3s ease-in-out;
+  }
+  
   width:100%;
   h2{
     
@@ -71,7 +74,10 @@ export const Form = styled.form`
   justify-content:stretch;
   background:var(--lightBege);
   padding:16px;
-  animation : ${slideToLeft} 3s ease-in-out;
+  @media (min-width:768px){
+    animation: ${slideToLeft} 3s ease-in-out;
+  }
+  
   h2{
     line-height:200px;
     font-size:60px;
@@ -88,6 +94,16 @@ export const InputsContainer = styled.div`
   flex-direction:column;
   align-items:center;
   justify-content:start;
+  p{
+    margin-top:6px;
+   color:var(--darkBlue);
+   a{
+     color:var(--pink);
+     :hover{
+       text-decoration:underline;
+     }
+   }
+ }
 `;
 export const InputDiv = styled.div`
   display:flex;
@@ -105,7 +121,7 @@ export const InputDiv = styled.div`
 `
 export const Input = styled.input`
   width:400px;
-  height:68px;
+  height:60px;
   margin-top:20px;
   background:${props=>props.bgDarkBlue?css`var(--darkBlue)`:css`var(--lightBege)`};
   color:${props=>props.colorBege?css`#EAE2B7`:css` #0E1137`};
@@ -115,13 +131,16 @@ export const Input = styled.input`
   border-radius:8px;
   font-size:20px;
   outline:none;
+  @media (max-width:432px){
+    width:360px;
+  }
   :focus{
     border:2px solid var(--purple);
   }
 `;
 export const LogInButton = styled(Button)`
   width:260px;
-  height:60px;
+  height:52px;
   font-size:24px;
   background-color: var(--darkBlue);
   color:var(--lightBege);

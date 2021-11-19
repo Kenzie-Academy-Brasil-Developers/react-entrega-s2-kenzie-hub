@@ -6,7 +6,7 @@ import {
   Input,
   InputDiv,LogInButton
 } from "./../../Styles/Login/styles";
-
+import {Link} from 'react-router-dom';
 import Icon from '../../Components/Icon/index';
 import { FiMail,FiEyeOff} from 'react-icons/fi'
 const Login = () => {
@@ -29,6 +29,7 @@ const Login = () => {
             <Icon icon={FiEyeOff}/>
             <Input bgDarkBlue colorBege type="password" placeholder="Password" />
           </InputDiv>
+          <p>Doesn't have an account? <Link to='/signup'>Click here!</Link></p>
           <LogInButton type='submit'>Ready</LogInButton>
         </InputsContainer>
       </Form>

@@ -17,12 +17,17 @@ const GlobalStyle = createGlobalStyle`
     width:100vw;
     height:100vh;
   }
+ 
   body{
     background:var(--darkBlue);
     font-family: 'Roboto Mono', monospace;
     font-size:1rem;
-    color:var(--lightBege)
+    color:var(--lightBege);
+    
   }
+  ::-webkit-scrollbar {
+    display: none;
+}
   button,input{
     font-family: 'Roboto Mono', monospace;
   }

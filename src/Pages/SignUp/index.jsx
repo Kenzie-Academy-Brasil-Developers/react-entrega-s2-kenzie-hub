@@ -6,16 +6,16 @@ import {
   Input,
   InputDiv,LogInButton,Quarter
 } from "./../../Styles/SignUp/styles";
-
+import {Link} from 'react-router-dom';
 import Icon from '../../Components/Icon/index';
-import { FiUser,FiEye,FiTag,FiMail,FiEyeOff} from 'react-icons/fi'
+import { FiUser,FiEye,FiLinkedin,FiTag,FiMail,FiEyeOff} from 'react-icons/fi'
 
 const SignUp = ()=>{
   return (
     <Container>
       <NewWelcome>
         <h2>
-          Welcome, sign up<span>!</span>
+          Welcome<span>!</span>
         </h2>
         <div></div>
       </NewWelcome>
@@ -43,17 +43,22 @@ const SignUp = ()=>{
             <Input  type="text" placeholder="Confirm password"/>
           </InputDiv>
           <InputDiv>
+            <Icon icon={FiLinkedin}/>
+            <Input  type="text" placeholder="Linked in"/>
+          </InputDiv>
+          <InputDiv>
           
             <Quarter>
               <div>
                 <h2>Select the Module</h2>
               </div>
               <div>
-                <button>Quarter 1</button>
-                <button>Quarter 2</button>
-                <button>Quarter 3</button>
-                <button>Quarter 4</button>
+                <button>Q1</button>
+                <button>Q2</button>
+                <button>Q3</button>
+                <button>Q4</button>
               </div>
+              <p>Already have an account?<Link to='/login'> Login here!</Link></p>
               </Quarter>
           </InputDiv>
             
