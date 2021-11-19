@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled ,{keyframes}from 'styled-components';
 import dashboardImage from './../../Assets/dashboard.png';
 export const Container = styled.main`
   display:flex;
@@ -38,8 +38,18 @@ export const Content = styled.section`
     padding:0;
   }
 `;
+const slideToRight = keyframes`
+   from{
+    opacity:0;
+    transform:translateX(-150px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0px);
+  }
+`
 export const Background = styled.div`
-  
+  animation: ${slideToRight} 3s ease-in-out;
   @media screen and (min-width:1100px){
     flex:1;
     background: url(${dashboardImage}) no-repeat center;
@@ -47,12 +57,23 @@ export const Background = styled.div`
     margin-bottom:32px;
   }
 `;
+const slideToLeft = keyframes`
+  from{
+    opacity:0;
+    transform:translateX(150px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0px);
+  }
+`
 
 export const Description = styled.div`
   flex:1;
   display:flex;
   flex-direction:column;
   justify-content:space-evenly;
+  animation :${slideToLeft} 3s ease-in-out;
   p{
     padding-right:32px;
     font-size:34px;

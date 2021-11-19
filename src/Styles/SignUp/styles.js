@@ -1,4 +1,4 @@
-import styled ,{css} from 'styled-components';
+import styled ,{css,keyframes} from 'styled-components';
 import newWelcomeImage  from './../../Assets/newWelcome.png';
 import Button from '../Button/styles'
 export const Container = styled.main`
@@ -8,6 +8,16 @@ export const Container = styled.main`
   flex-wrap:wrap;
  
 `;
+const slideToRight = keyframes`
+   from{
+    opacity:0;
+    transform:translateX(-150px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0px);
+  }
+`
 export const NewWelcome = styled.section`
   flex:1;
   display:flex;
@@ -17,6 +27,7 @@ export const NewWelcome = styled.section`
   padding:16px;
   width:100%;
   background:var(--lightBege);
+  animation: ${slideToRight} 3s ease-in-out;
   h2{
     color:var(--darkBlue);
     flex-basis:240px;
@@ -44,7 +55,16 @@ export const NewWelcome = styled.section`
     
   }
 `;
-
+const slideToLeft = keyframes`
+  from{
+    opacity:0;
+    transform:translateX(150px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0px);
+  }
+`
 export const Form = styled.form`
   flex:1;
   display:flex;
@@ -53,6 +73,7 @@ export const Form = styled.form`
   justify-content:stretch;
   background:var(--darkBlue);
   padding:16px;
+  animation: ${slideToLeft} 3s ease-in-out;
   h2{
     flex-basis:80px;
     font-size:60px;
@@ -62,6 +83,7 @@ export const Form = styled.form`
     }
   }
 `;
+
 export const InputsContainer = styled.div`
   flex:2;
   display:flex;
