@@ -32,8 +32,8 @@ export const Welcome = styled.section`
   width:100%;
   h2{
     
-    flex-basis:240px;
-    line-height:200px;
+    flex-basis:100px;
+    
     font-size:60px;
     text-align:center;
     @media (max-width:1100px){
@@ -79,12 +79,12 @@ export const Form = styled.form`
   }
   
   h2{
-    line-height:200px;
+    line-height:100px;
     font-size:60px;
     flex-basis:240px;
     color:var(--darkBlue);
-    @media (max-width:1100px){
-      line-height:100px;
+    @media (max-width:740px){
+      flex-basis:40px;
     }
   }
 `;

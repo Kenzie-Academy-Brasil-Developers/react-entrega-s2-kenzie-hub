@@ -33,8 +33,8 @@ export const NewWelcome = styled.section`
   
   h2{
     color:var(--darkBlue);
-    flex-basis:240px;
-    line-height:120px;
+    flex-basis:100px;
+    line-height:100px;
     font-size:60px;
     text-align:center;
     display:block;
