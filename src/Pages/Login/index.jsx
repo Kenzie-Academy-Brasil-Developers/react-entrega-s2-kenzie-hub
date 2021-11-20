@@ -8,8 +8,10 @@ import {
 } from "./../../Styles/Login/styles";
 import {Link} from 'react-router-dom';
 import Icon from '../../Components/Icon/index';
-import { FiMail,FiEyeOff} from 'react-icons/fi'
+import { FiMail,FiEyeOff} from 'react-icons/fi';
+import {useHistory } from 'react-router-dom';
 const Login = () => {
+  const history = useHistory();
   return (
     <Container>
       <Welcome>
@@ -30,7 +32,7 @@ const Login = () => {
             <Input bgDarkBlue colorBege type="password" placeholder="Password" />
           </InputDiv>
           <p>Doesn't have an account? <Link to='/signup'>Click here!</Link></p>
-          <LogInButton type='submit'>Ready</LogInButton>
+          <LogInButton  type='submit'>Ready</LogInButton>
         </InputsContainer>
       </Form>
     </Container>

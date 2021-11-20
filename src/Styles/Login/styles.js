@@ -8,7 +8,7 @@ export const Container = styled.main`
   flex-wrap:wrap;
  
 `;
-const slideToDown = keyframes`
+export const slideToDown = keyframes`
   from{
     opacity:0;
     transform:translateY(-150px);
@@ -135,7 +135,7 @@ export const Input = styled.input`
     width:360px;
   }
   :focus{
-    border:2px solid var(--purple);
+    border:3px solid var(--purple);
   }
 `;
 export const LogInButton = styled(Button)`
@@ -145,6 +145,7 @@ export const LogInButton = styled(Button)`
   background-color: var(--darkBlue);
   color:var(--lightBege);
   margin-top:42px;
+  
   :hover{
     color:var(--darkBlue);
   }

@@ -6,9 +6,9 @@ export const Container = styled.main`
   justify-content:stretch;
   height:100vh;
   flex-wrap:wrap;
- 
+  position:relative;
 `;
-const slideToRight = keyframes`
+export const slideToRight = keyframes`
    from{
     opacity:0;
     transform:translateX(-150px);
@@ -134,7 +134,7 @@ export const Input = styled.input`
     width:250px;
   }
   :focus{
-    border:2px solid var(--purple);
+    border:3px solid var(--purple);
   }
 `;
 export const LogInButton = styled(Button)`

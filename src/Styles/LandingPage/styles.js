@@ -1,6 +1,6 @@
 import styled ,{keyframes}from 'styled-components';
 import dashboardImage from './../../Assets/dashboard.png';
-
+import {slideToDown} from  './../../Styles/Login/styles';
 export const Container = styled.main`
   display:flex;
   flex-direction:column;
@@ -12,6 +12,7 @@ export const Container = styled.main`
     text-align:start;
     width:100%;
     align-items:center;
+    animation:${slideToDown} 2s ease-in-out;
     h1{
       font-size:100px;
       padding:10px 0 10px 32px;

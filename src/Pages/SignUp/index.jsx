@@ -8,10 +8,10 @@ import {
 } from "./../../Styles/SignUp/styles";
 import {Link} from 'react-router-dom';
 import Icon from '../../Components/Icon/index';
-import { FiUser,FiEye,FiLinkedin,FiTag,FiMail,FiEyeOff} from 'react-icons/fi'
-
+import { FiUser,FiEye,FiLinkedin,FiTag,FiMail,FiEyeOff} from 'react-icons/fi';
+import Success from './../../Components/Success/index';
 const SignUp = ()=>{
-  return (
+  return (<>
     <Container>
       <NewWelcome>
         <h2>
@@ -66,6 +66,8 @@ const SignUp = ()=>{
         </InputsContainer>
       </Form>
     </Container>
+    <Success/>
+    </>
   );
 }
 export default SignUp;

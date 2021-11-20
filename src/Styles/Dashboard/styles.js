@@ -1,91 +1,125 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.main`
-  position:relative;
-  display:flex;
-  height:100vh;
-  flex-direction:column;
-  background:var(--lightBege);
-  filter:blur(6px);
-  opacity:0.2;
-  div{
-    
-    h1{
-      line-height:120px;
-      text-align:center;
-      font-size:100px;
-      color:var(--darkBlue);
-      span{
-        font-size:80px;
-        color:var(--pink);
-        
-      }
-      
-  }
-}
-  section {
-    
-    
-  }
+  position: relative;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background: var(--lightBege);
+      /* filter:blur(6px);
+      opacity:0.2; */
 `;
-export const ContainerSection = styled.section`
-    background:var(--lightBege);
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:space-around;
-    align-items: center;
-    @media (max-width:1174px){
-      flex-direction:column;
-      align-items:center;
+export const Header = styled.div`
+  
+  h1{
+    text-align: center;
+    font-size:80px;
+    color:var(--darkBlue);
+    span{
+      font-size:52px;
+      color:var(--pink)
+    }
   }
 `
-
-export const TechsSection = styled.section`
-  background:var(--darkBlue);
-  display:flex;
-  flex-direction : column;
-  margin:20px;
-  min-height:300px;
-  min-width:300px;
-  border-radius: 50px 8px 50px 50px;
-  box-shadow: 6px 6px 2px var(--pink);
-  div{
-  
-    display:flex;
-    justify-content:space-between;
-    h2{
-      padding:20px;
-      text-align:center;
-      flex:1;
-      color:var(--lightBege)
-    }
-    button{
-      width:36px;
-      height:36px;
-      margin:16px;
-      border-radius:8px;
-      border:none;
-      font-size:24px;
-      font-weight:700;
-      cursor:pointer;
-      background:var(--lightBege);
-      :hover{
-        border:3px solid var(--pink);   
-        background:transparent;
-        color:var(--lightBege);
-      } 
-    }
+export const ContainerSection = styled.section`
+  background: var(--lightBege);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  @media (max-width: 1174px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
-export const WorksSection = styled(TechsSection)`
-  min-height:300px;
+const slideToLeft = keyframes`
+  from{
+    opacity:0;
+    transform:translateX(100px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
 `;
+
+export const TechsSection = styled.section`
+  background: var(--darkBlue);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  min-height: 300px;
+  animation:${slideToLeft} 2s ease-in-out;
+  border-radius: 50px 8px 50px 50px;
+  box-shadow: 6px 6px 2px var(--pink);
+  padding:10px;
+  @media (max-width: 360px) {
+    min-width: 280px;
+  }
+  @media (min-width: 362px) {
+    width: 360px;
+  }
+  
+`;
+export const WorksSection = styled(TechsSection)``;
 
 export const BioSection = styled.section`
-  
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
-
+export const HeaderTech = styled.div`
+ 
+    display: flex;
+    justify-content: space-around;
+    h2 {
+      padding:4px;
+      text-align: center;
+      flex: 1;
+      color: var(--lightBege);
+    }
+    button {
+      width: 36px;
+      height: 36px;
+      line-height: 28px;
+      margin: 16px;
+      border-radius: 8px;
+      border: none;
+      font-size: 20px;
+      text-align: center;
+      justify-content: center;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--lightBege);
+      :hover {
+        border: 3px solid var(--pink);
+        background: transparent;
+        color: var(--lightBege);
+      }
+    }
+  
+`;
+export const HeaderWork = styled(HeaderTech)`
+`;
+export const ListDiv = styled.div`
+   h1 {
+      padding: 20px;
+      line-height: 120px;
+      text-align: center;
+      font-size: 100px;
+      color: var(--darkBlue);
+      @media (max-width: 500px) {
+        font-size: 56px;
+      }
+      span {
+        font-size: 80px;
+        color: var(--pink);
+        @media (max-width: 500px) {
+          font-size: 46px;
+        }
+      }
+    }
+`

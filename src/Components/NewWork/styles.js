@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {slideToDown} from './../../Components/NewTech/styles';
 
 export const Section = styled.section`
   position: absolute;
@@ -16,6 +17,7 @@ export const Section = styled.section`
   align-items:center;
   justify-content:space-between;
   box-shadow:4px 4px 2px var(--purple);
+  animation : ${slideToDown} 1.2s cubic-bezier( 0.68, -0.55, 0.265, 1.55 );
   @media (max-width:388px){
     width:260px;
   }

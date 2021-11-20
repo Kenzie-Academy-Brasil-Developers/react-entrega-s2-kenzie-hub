@@ -35,7 +35,10 @@ export const Section = styled.section`
   @media (max-width:388px){
     width:260px;
   }
-
+  p{
+    font-size:22px;
+    text-align:center;
+  }
   button{
     background:var(--lightBege);
     cursor:pointer;
@@ -61,43 +64,12 @@ export const TechHeader = styled.div`
     font-weight:700;
     border-radius:10px;
     border:none;
+    margin-left:8px;
   }
   
 `;
-export const InputsArea = styled.div`
 
-  input{
-    width:100%;
-    height:44px;
-    border-radius:10px;
-    border:none;
-    margin:10px 0;
-    padding-left:10px;
-    :focus{
-      outline:3px solid var(--purple);
-    }
-  }
-  ul{
-    margin:10px 0;
-    list-style:none; 
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    li{
-      border-radius:10px;
-      margin:4px;
-      font-size:14px;
-      border:2px solid var(--purple);
-      padding:4px;
-      :hover{
-        cursor:pointer;
-        background:var(--purple);
-        
-      }
-    }
-  }
-`;
-export const Create = styled.button`
+export const LogIn = styled.button`
   width:220px;
   height:48px;
   border:none;

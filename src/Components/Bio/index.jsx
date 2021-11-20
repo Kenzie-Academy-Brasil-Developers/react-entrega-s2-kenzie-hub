@@ -1,13 +1,15 @@
 import React from 'react';
-import {Name,Container,LogOut} from './styles';
+import {Name,Container,LogOut,ContainerProfile} from './styles';
 import {useHistory} from 'react-router-dom';
+import {FiUser} from 'react-icons/fi';
+import Icon from './../../Components/Icon';
 const Bio = ()=>{
   const history = useHistory();
   return (
     <Container>
-      <div>
-        <Name>Micael</Name>
-      </div>
+      <Icon icon={FiUser}/>
+        
+        <Name>Micaa</Name>
       
       <div>
         <h3>Bio:</h3>
