@@ -64,6 +64,8 @@ export const LogOut = styled(Button)`
   :hover {
     background: var(--purple);
   }
+  transition-property: background;
+      transition-duration:0.6s;
 `;
 export const ContainerProfile = styled.div`
   display: flex;

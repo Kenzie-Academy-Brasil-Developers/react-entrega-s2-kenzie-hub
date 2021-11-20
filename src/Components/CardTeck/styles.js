@@ -12,7 +12,10 @@ export const Container = styled.div`
   :hover{
     
     background:var(--purple);
+    
   }
+  transition-property:background;
+  transition-duration:0.6s;
 
 `
 export const DivIcon = styled.div`
@@ -38,20 +41,36 @@ export const Description = styled.div`
       :hover{
         background:var(--pink)
       }
-      padding:2px;
-      border:3px solid var(--purple);
+      transition:background 0.6s;
+      padding:4px;
+      border-bottom:4px solid var(--purple);
       border-radius:8px;
+      @media (max-width:400px){
+        font-size:12px;
+      }
     }
 `
 export const Tech = styled.h2`
   padding:0;
+  @media(max-width:400px){
+    font-size:16px;
+  }
 `;
 export const EditDiv = styled.div`
   position:absolute;
   right:10px;
   top:10px;
   svg{
+    padding:4px;
+    width:20px;
+    height:20px;
+    border-radius:8px;
     cursor:pointer;
-   
+    :hover{
+      background:var(--pink);
+
+    }
+    transition:background 0.6s;
+
   }
 `

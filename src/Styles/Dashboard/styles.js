@@ -55,15 +55,21 @@ export const TechsSection = styled.section`
   border-radius: 50px 8px 50px 50px;
   box-shadow: 6px 6px 2px var(--pink);
   padding:10px;
-  @media (max-width: 360px) {
-    min-width: 280px;
+  @media (max-width: 440px) {
+    min-width: 300px;
   }
-  @media (min-width: 362px) {
+  @media (min-width: 440px) {
     width: 360px;
   }
   
 `;
-export const WorksSection = styled(TechsSection)``;
+export const WorksSection = styled(TechsSection)`
+@media (max-width: 440px) {
+    width: 300px;
+  }
+  @media (min-width: 440px) {
+    width: 360px;
+  }`;
 
 export const BioSection = styled.section`
   min-width: 280px;
@@ -80,6 +86,9 @@ export const HeaderTech = styled.div`
       text-align: center;
       flex: 1;
       color: var(--lightBege);
+      @media(max-width: 400px){
+        font-size:20px;
+      }
     }
     button {
       width: 36px;
@@ -99,6 +108,8 @@ export const HeaderTech = styled.div`
         background: transparent;
         color: var(--lightBege);
       }
+      transition-property: background,border;
+      transition-duration:0.6s;
     }
   
 `;

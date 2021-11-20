@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {slideToDown} from './../../Components/NewTech/styles';
+import {slideToDown} from './NewTech/styles';
 
 export const Section = styled.section`
   position: absolute;
