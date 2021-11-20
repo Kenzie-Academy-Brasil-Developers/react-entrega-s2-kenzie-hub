@@ -1,7 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  html,body,div,p,span,h1,h2,button,input,a,header,section{
+  html,body,div,p,span,h1,h2,button,input,a,header,section,fieldset,form,ul,li,legend{
     margin:0;
     padding:0;
     box-sizing:border-box; 
@@ -23,10 +23,21 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto Mono', monospace;
     font-size:1rem;
     color:var(--lightBege);
-    
+    overflow-y:${props=>props.scroll?'scroll':'hidden'};
+    overflow-x:hidden;
   }
-  ::-webkit-scrollbar {
-    display: none;
+  body::-webkit-scrollbar {
+  width: 10px;
+  
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 20px var(--darkBlue);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--purple);
+  width:20px;
 }
   button,input{
     font-family: 'Roboto Mono', monospace;
