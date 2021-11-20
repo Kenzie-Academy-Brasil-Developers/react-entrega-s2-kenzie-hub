@@ -46,6 +46,7 @@ export const Section = styled.section`
       
       background:var(--purple);
     }
+    transition:background 0.6s;
   }
 `;
 export const TechHeader = styled.div`
@@ -53,6 +54,9 @@ export const TechHeader = styled.div`
   justify-content: space-between;
   h2 {
     color: var(--lightBege);
+    @media(max-width:400px){
+      font-size:20px;
+    }
     span{
       color:var(--purple);
     }
@@ -65,6 +69,7 @@ export const TechHeader = styled.div`
     border-radius:10px;
     border:none;
     margin-left:8px;
+    
   }
   
 `;
@@ -79,4 +84,5 @@ export const LogIn = styled.button`
   :hover{
     color:var(--lightBege);
   }
+  transition:background 0.6s;
 `;

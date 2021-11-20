@@ -135,8 +135,9 @@ export const Input = styled.input`
     width:360px;
   }
   :focus{
-    border:3px solid var(--purple);
+    outline:3px solid var(--purple);
   }
+  
 `;
 export const LogInButton = styled(Button)`
   width:260px;
@@ -149,4 +150,5 @@ export const LogInButton = styled(Button)`
   :hover{
     color:var(--darkBlue);
   }
+  transition:background 0.6s;
 `

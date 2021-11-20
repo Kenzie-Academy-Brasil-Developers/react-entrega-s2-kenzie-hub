@@ -137,7 +137,7 @@ export const Input = styled.input`
     border:3px solid var(--purple);
   }
 `;
-export const LogInButton = styled(Button)`
+export const LogOut = styled(Button)`
   width:260px;
   height:48px;
   font-size:24px;
@@ -147,6 +147,7 @@ export const LogInButton = styled(Button)`
   :hover{
     color:var(--lightBege);
   }
+  transition:background 0.6s;
 `
 export const Quarter = styled.div`
  width:100%;
@@ -186,9 +187,12 @@ export const Quarter = styled.div`
    border-radius:12px;
    border:2px solid var(--pink);
    cursor:pointer;
+   
    :hover{
      background:transparent;
      color:var(--lightBege);
    }
+   transition:background 0.6s;
+   
  }
 `

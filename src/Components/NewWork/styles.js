@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import {slideToDown} from './NewTech/styles';
+import {slideToDown} from '../NewTech/styles';
 
 export const Section = styled.section`
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index:1;
   transform: translate(-50%, -50%);
   color: var(--black);
   width: 320px;
@@ -28,6 +29,7 @@ export const Section = styled.section`
       
       background:var(--purple);
     }
+    transition:background 0.6s;
   }
 `;
 export const TechHeader = styled.div`
@@ -81,6 +83,7 @@ export const Create = styled.button`
   :hover{
     color:var(--lightBege);
   }
+  
 `;
 export const Input = styled.input`
   

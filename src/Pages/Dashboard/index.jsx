@@ -8,7 +8,7 @@ import {
   ListDiv,HeaderWork,Header
 } from "./../../Styles/Dashboard/styles";
 import Bio from "./../../Components/Bio";
-import NewTech from "../../Components/NewWork/NewTech";
+import NewTech from "../../Components/NewTech";
 import NewWork from "./../../Components/NewWork";
 import ListTech from "./../../Components/ListTech/index";
 import ListWork from "./../../Components/ListWork/index";

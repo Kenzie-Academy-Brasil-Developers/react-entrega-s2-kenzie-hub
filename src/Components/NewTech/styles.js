@@ -43,6 +43,7 @@ export const Section = styled.section`
       
       background:var(--purple);
     }
+    transition:background 0.6s;
   }
 `;
 export const TechHeader = styled.div`
@@ -76,6 +77,7 @@ export const InputsArea = styled.div`
     :focus{
       outline:3px solid var(--purple);
     }
+    
   }
   ul{
     margin:10px 0;
@@ -94,6 +96,7 @@ export const InputsArea = styled.div`
         background:var(--purple);
         
       }
+      transition:background 0.6s;
     }
   }
 `;
@@ -107,4 +110,5 @@ export const Create = styled.button`
   :hover{
     color:var(--lightBege);
   }
+  transition:background 0.6s;
 `;

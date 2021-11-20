@@ -4,7 +4,7 @@ import {
   Form,
   InputsContainer,
   Input,
-  InputDiv,LogInButton,Quarter
+  InputDiv,LogOut,Quarter
 } from "./../../Styles/SignUp/styles";
 import {Link} from 'react-router-dom';
 import Icon from '../../Components/Icon/index';
@@ -62,7 +62,7 @@ const SignUp = ()=>{
               </Quarter>
           </InputDiv>
             
-          <LogInButton type='submit'>Ready</LogInButton>
+          <LogOut type='submit'>Ready</LogOut>
         </InputsContainer>
       </Form>
     </Container>
