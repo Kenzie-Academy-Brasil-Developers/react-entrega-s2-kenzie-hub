@@ -1,10 +1,10 @@
 import { Section, TechHeader, InputsArea, Create } from "./styles";
-const NewTech = () => {
+const NewTech = ({setShowNewTech}) => {
   return (
     <Section>
       <TechHeader>
         <h2>Register New <span>Tech</span></h2>
-        <button>x</button>
+        <button onClick={()=>setShowNewTech(false)}>x</button>
       </TechHeader>
       <InputsArea>
         <input id="techName" type="text" placeholder="Technology Name" />

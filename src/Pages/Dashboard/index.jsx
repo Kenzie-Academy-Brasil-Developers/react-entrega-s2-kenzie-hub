@@ -14,7 +14,10 @@ import ListTech from "./../../Components/ListTech/index";
 import ListWork from "./../../Components/ListWork/index";
 import GlobalStyle from "./../../Styles/Global/styles";
 import {Redirect} from 'react-router-dom';
+import {useState} from 'react'
 const Dashboard = ({auth,setAuth}) => {
+  const [showNewTech,setShowNewTech] = useState(false);
+  const [showNewWork,setShowNewWork] = useState(false);
   if(!auth){
     return <Redirect to='/login'/>
   }
@@ -34,7 +37,7 @@ const Dashboard = ({auth,setAuth}) => {
           <TechsSection>
             <HeaderTech>
               <h2>My techs</h2>
-              <button>+</button>
+              <button onClick={()=>setShowNewTech(true)}>+</button>
             </HeaderTech>
               <ListDiv>
                 <ListTech />
@@ -44,7 +47,7 @@ const Dashboard = ({auth,setAuth}) => {
           <WorksSection>
             <HeaderWork>
               <h2>My Works</h2>
-              <button>+</button>
+              <button onClick={()=>setShowNewWork(true)}>+</button>
             </HeaderWork>
             <div>
             <ListWork />
@@ -54,8 +57,8 @@ const Dashboard = ({auth,setAuth}) => {
         </ContainerSection>
       </Container>
 
-      {/* <NewTech/> */}
-      {/* <NewWork/> */}
+      {showNewTech&&<NewTech setShowNewTech={setShowNewTech}/>}
+      {showNewWork&&<NewWork setShowNewWork={setShowNewWork}/>}
     </>
   );
 };

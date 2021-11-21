@@ -10,20 +10,23 @@ const Bio = ({setAuth})=>{
     setAuth(false);
     return history.push('/');
   }
+  const user = JSON.parse(localStorage.getItem('@kenzieHub:user'));
+  const {name,bio,contact} = user
+  
  
   return (
     <Container>
       <Icon icon={FiUser}/>
         
-        <Name>Micaa</Name>
+        <Name>{name}</Name>
       
       <div>
         <h3>Bio:</h3>
-        <p>Sou dev front end</p>
+        <p>{bio}</p>
       </div>
       <div>
         <h3>Contact:</h3>
-        <p>linked in</p>
+        <p>{contact}</p>
       </div>
       <LogOut onClick={()=>handleLogOut()}>Log out</LogOut>
     </Container>
