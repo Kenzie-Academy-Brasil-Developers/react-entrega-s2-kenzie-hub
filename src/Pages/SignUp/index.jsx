@@ -15,7 +15,8 @@ import {
 
 import { Link , Redirect} from "react-router-dom";
 import Icon from "../../Components/Icon/index";
-
+import closedEye from './../../Assets/closed-eye.png';
+import openedEye from './../../Assets/opened-eye.png';
 import {
   FiUser,
   FiEye,
@@ -158,8 +159,8 @@ const SignUp = ({togglePasswordVisiblity,setPasswordShown, passwordShown,setConf
                 }
                 src={
                   passwordShown
-                    ? "https://img.icons8.com/ios-glyphs/30/000000/visible--v1.png"
-                    : "https://img.icons8.com/material-outlined/24/000000/closed-eye.png"
+                    ? openedEye
+                    : closedEye
                 }
               />
               <Input
@@ -181,9 +182,9 @@ const SignUp = ({togglePasswordVisiblity,setPasswordShown, passwordShown,setConf
                   )
                 }
                 src={
-                  confPasswordShown
-                    ? "https://img.icons8.com/ios-glyphs/30/000000/visible--v1.png"
-                    : "https://img.icons8.com/material-outlined/24/000000/closed-eye.png"
+                  passwordShown
+                    ? openedEye
+                    : closedEye
                 }
               />
               <Input

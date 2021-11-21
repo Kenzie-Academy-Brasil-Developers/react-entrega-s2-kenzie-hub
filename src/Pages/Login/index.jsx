@@ -16,6 +16,8 @@ import { useState } from "react";
 import api from './../../Services/api';
 import {useHistory,Redirect} from 'react-router-dom';
 import {DivError,ErrorsApi,CloseErr} from './../../Styles/SignUp/styles';
+import closedEye from './../../Assets/closed-eye.png';
+import openedEye from './../../Assets/opened-eye.png';
 const Login = ({togglePasswordVisiblity,
   setPasswordShown,
   passwordShown,auth,setAuth
@@ -93,8 +95,8 @@ const Login = ({togglePasswordVisiblity,
                 }
                 src={
                   passwordShown
-                    ? "https://img.icons8.com/ios-glyphs/30/000000/visible--v1.png"
-                    : "https://img.icons8.com/material-outlined/24/000000/closed-eye.png"
+                    ? openedEye
+                    : closedEye
                 }
               />
             <Input bgDarkBlue colorBege type={passwordShown ? "text" : "password"} placeholder="Password" {...register('password')}/>
