@@ -6,11 +6,21 @@ import {
   Input,
   InputDiv,LogOut,Quarter
 } from "./../../Styles/SignUp/styles";
+
 import {Link} from 'react-router-dom';
 import Icon from '../../Components/Icon/index';
 import { FiUser,FiEye,FiLinkedin,FiTag,FiMail,FiEyeOff} from 'react-icons/fi';
 import Success from './../../Components/Success/index';
+import {useForm} from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 const SignUp = ()=>{
+  const schema = yup.object().shape({
+
+  })
+  const {register,handleSubmit, formState: {errors}} = useForm({
+    resolvers:yupResolver(schema)
+  })
   return (<>
     <Container>
       <NewWelcome>
@@ -66,7 +76,7 @@ const SignUp = ()=>{
         </InputsContainer>
       </Form>
     </Container>
-    <Success/>
+    {/* <Success/> */}
     </>
   );
 }

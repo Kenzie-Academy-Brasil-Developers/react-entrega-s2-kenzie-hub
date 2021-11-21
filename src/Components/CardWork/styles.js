@@ -41,6 +41,12 @@ export const Description = styled.div`
         font-size:12px;
       }
     }
+    a{
+      color:var(--purple);
+      :hover{
+        text-decoration:underline;
+      }
+    }
 `
 export const Tech = styled.h2`
   padding:0;

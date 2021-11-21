@@ -1,7 +1,7 @@
 import {Container,DivIcon,Description,Tech,EditDiv} from './styles';
 import Icon from '../Icon'
 import {FiGithub, FiEdit2 } from 'react-icons/fi'
-
+import {Link} from 'react-router-dom';
 const CardWork = ()=>{
   return (
     <>
@@ -15,6 +15,7 @@ const CardWork = ()=>{
           Javascript
         </Tech>
         <p>Descrição do curso com limite de palavras...</p>
+        <Link>Link</Link>
       </Description>
       <EditDiv>
         <Icon icon={FiEdit2}/>

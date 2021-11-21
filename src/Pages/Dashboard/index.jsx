@@ -51,7 +51,7 @@ const Dashboard = () => {
       </Container>
 
       {/* <NewTech/> */}
-      {/* <NewWork/> */}
+      <NewWork/>
     </>
   );
 };

@@ -9,7 +9,7 @@ export const Section = styled.section`
   transform: translate(-50%, -50%);
   color: var(--black);
   width: 320px;
-  height: 340px;
+  height: 400px;
   border-radius: 40px 8px 40px 40px;
   color:var(--lightBege);
   background-color: var(--black);

@@ -9,6 +9,7 @@ const NewWork = () => {
       <InputsArea >
         <Input id="techName" type="text" placeholder="Technology Name" />
         <Input  description type="text" placeholder='Description' />
+        <Input type = 'text' placeholder = 'Deploy url'/>
       </InputsArea>
       <Create>Create</Create>
     </Section>
