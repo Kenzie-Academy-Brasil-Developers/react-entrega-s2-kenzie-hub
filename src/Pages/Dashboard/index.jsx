@@ -55,7 +55,7 @@ const Dashboard = ({auth,setAuth}) => {
       </Container>
 
       {/* <NewTech/> */}
-      <NewWork/>
+      {/* <NewWork/> */}
     </>
   );
 };
