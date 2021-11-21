@@ -1,12 +1,16 @@
 import styled ,{css,keyframes} from 'styled-components';
 import newWelcomeImage  from './../../Assets/newWelcome.png';
-import Button from '../Button/styles'
+import Button from '../Button/styles';
+
 export const Container = styled.main`
   display:flex;
   justify-content:stretch;
   height:100vh;
   flex-wrap:wrap;
   position:relative;
+  ${props=>props.success&&css`
+    filter:blur(8px);
+  `}
 `;
 export const slideToRight = keyframes`
    from{
@@ -104,24 +108,52 @@ export const InputDiv = styled.div`
   width:100%;
   align-items: center;
   justify-content: center;
+  padding: 4px 0;
   svg{
     width:20px;
     height:20px;
     position:absolute;
-    color:var(--darkBlue);
+    color:var(--black);
     left:10px;
     top:61%;
     transform:translateY(-50%);
-    @media (max-width:450px){
-      display:none;
-    }
+    cursor: ${props=>props.cursor?css`pointer`:css`normal`};
+    
   }
+  img{
+    height:20px;
+    position:absolute;
   
+    width:20px;
+    left:10px;
+    top:30px;
+    content:'';
+    cursor:pointer;
+    
+
+  }
+  span{
+    padding:2px 0 ;
+    color:#ff5778;
+    position:absolute;
+    top:-5px;
+    font-size:14px;
+    left:0;
+  }
+  ${props=>props.error&&css`
+    svg{
+      color:#ff5778;
+    }
+    input{
+      border:2px solid #ff5778;
+
+    }
+  `}
 `
 export const Input = styled.input`
   width:400px;
-  height:46px;
-  margin-top:14px;
+  height:40px;
+  margin-top:16px;
   background:${props=>props.bgDarkBlue?css`var(--darkBlue)`:css`var(--lightBege)`};
   color:${props=>props.colorBege?css`#EAE2B7`:css` #0E1137`};
   border:none;
@@ -131,13 +163,19 @@ export const Input = styled.input`
   outline:none;
   font-size:16px;
   @media (max-width:430px){
-    width:250px;
+    width:100%;
   }
   :focus{
-    border:3px solid var(--purple);
+    border:2px solid var(--purple);
+    ${props=>props.error&&css`
+    border: 2px solid #ff5778;
+  `}
   }
+  ${props=>props.error&&css`
+    border: 2px solid #ff5778;
+  `}
 `;
-export const LogOut = styled(Button)`
+export const SignUpBtn = styled(Button)`
   width:260px;
   height:48px;
   font-size:24px;
@@ -159,7 +197,7 @@ export const Quarter = styled.div`
    display:flex;
    justify-content:space-around;
    flex-wrap:wrap;
-   margin:8px 0;
+   margin:4px 0;
    h2{
      flex:1;
       font-size:20px;
@@ -176,12 +214,15 @@ export const Quarter = styled.div`
      }
    }
  }
- button{
+ 
+`
+export const ButtonModule = styled.button`
+
    font-weight:bold;
    color:var(--darkBlue);
    
-   width:90px;
-   height:30px;
+   width:70px;
+   height:25px;
    font-size:16px;
    background:var(--lightBege);
    border-radius:12px;
@@ -192,7 +233,55 @@ export const Quarter = styled.div`
      background:transparent;
      color:var(--lightBege);
    }
+   :focus{
+     background:var(--pink)
+   }
    transition:background 0.6s;
    
- }
+
+`
+
+export const ErrorsApi = styled.span`
+  text-align:center;
+  color:black;
+  left:0;
+  top:100px;
+  color:#ff5778;
+  font-size:30px;
+  padding:14px;
+`
+export const slideToDown = keyframes`
+  from{
+    top:-100px;
+  }
+  to{
+   top:100px;
+  }
+`
+export const DivError = styled.div`
+  min-width:280px;
+  padding:16px;
+  border-radius:10px;
+  z-index:2;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  background:var(--black);
+  left:50%;
+  transform:translateX(-50%);
+  top:100px;
+  animation : ${slideToDown} 1.1s ease-in-out;
+`
+export const CloseErr = styled(Button)`
+  /* z-index:2; */
+  width:40px;
+  height:40px;
+  font-size:20px;
+  color:var(--black);
+  :hover{
+    background:var(--pink);
+  }
 `

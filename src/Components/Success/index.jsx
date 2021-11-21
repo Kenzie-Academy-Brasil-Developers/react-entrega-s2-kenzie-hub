@@ -1,12 +1,12 @@
 import { Section, TechHeader, LogIn } from "./styles";
 import {useHistory} from 'react-router-dom';
-const Success = () => {
+const Success = ({setSuccess}) => {
   const history =useHistory();
   return (
     <Section>
       <TechHeader>
         <h2>Congratulations<span>!</span></h2>
-        <button>x</button>
+        <button onClick={()=>setSuccess(false)}>x</button>
       </TechHeader>
 
         <p> Everything is alright, now you just need to log in!</p>

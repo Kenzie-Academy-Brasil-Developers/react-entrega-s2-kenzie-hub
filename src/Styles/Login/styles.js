@@ -108,23 +108,43 @@ export const InputsContainer = styled.div`
 export const InputDiv = styled.div`
   display:flex;
   position:relative;
-
+  padding:5px 0;
   svg{
     width:20px;
     height:20px;
     position:absolute;
-    color:var(--lightBege);
+    color:var(--black);
     left:10px;
     top:61%;
     transform:translateY(-50%);
+  }
+  img{
+    height:20px;
+    position:absolute;
+  
+    width:20px;
+    left:10px;
+    top:45px;
+    content:'';
+    cursor:pointer;
+    
+
+  }
+  span{
+    padding:2px 0 ;
+    color:#ff5778;
+    position:absolute;
+    top:-5px;
+    font-size:14px;
+    left:0;
   }
 `
 export const Input = styled.input`
   width:400px;
   height:60px;
   margin-top:20px;
-  background:${props=>props.bgDarkBlue?css`var(--darkBlue)`:css`var(--lightBege)`};
-  color:${props=>props.colorBege?css`#EAE2B7`:css` #0E1137`};
+  background:${props=>props.bgDarkBlue?css`#dddddf`:css`var(--lightBege)`};
+  color:${props=>props.colorBege?css`var(--black)`:css`var(--darkBlue)`};
   border:none;
   font-weight:500;
   padding-left:40px;
@@ -137,7 +157,9 @@ export const Input = styled.input`
   :focus{
     outline:3px solid var(--purple);
   }
-  
+  ${props=>props.errors&&css`
+    outline-color:var(--pink);
+  `}
 `;
 export const LogInButton = styled(Button)`
   width:260px;

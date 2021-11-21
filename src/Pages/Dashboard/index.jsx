@@ -13,7 +13,11 @@ import NewWork from "./../../Components/NewWork";
 import ListTech from "./../../Components/ListTech/index";
 import ListWork from "./../../Components/ListWork/index";
 import GlobalStyle from "./../../Styles/Global/styles";
-const Dashboard = () => {
+import {Redirect} from 'react-router-dom';
+const Dashboard = ({auth,setAuth}) => {
+  if(!auth){
+    return <Redirect to='/login'/>
+  }
   return (
     <>
       <GlobalStyle scroll />
@@ -25,7 +29,7 @@ const Dashboard = () => {
         </Header>
         <ContainerSection>
           <BioSection>
-            <Bio />
+            <Bio setAuth={setAuth}/>
           </BioSection>
           <TechsSection>
             <HeaderTech>

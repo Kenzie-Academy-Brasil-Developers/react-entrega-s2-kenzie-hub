@@ -15,7 +15,7 @@ const CardWork = ()=>{
           Javascript
         </Tech>
         <p>Descrição do curso com limite de palavras...</p>
-        <Link>Link</Link>
+        {/* <Link href=''>Link</Link> */}
       </Description>
       <EditDiv>
         <Icon icon={FiEdit2}/>

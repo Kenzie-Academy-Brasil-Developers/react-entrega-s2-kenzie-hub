@@ -1,8 +1,11 @@
 import {Container,Content,Background,Description} from './../../Styles/LandingPage/styles';
 import Button from './../../Styles/Button/styles';
-import {useHistory} from 'react-router-dom';
-const LandingPage = ()=>{
+import {useHistory,Redirect} from 'react-router-dom';
+const LandingPage = ({auth})=>{
   const history = useHistory();
+  if(auth){
+    return <Redirect to='/dashboard'/>
+  }
   return (
     <Container>
       <header><h1>KENZIE <span>Hub</span></h1></header>

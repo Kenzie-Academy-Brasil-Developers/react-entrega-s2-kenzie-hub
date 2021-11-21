@@ -1,7 +1,8 @@
 const Icon = ({icon : Icon})=>{
+  
   return (
     <>
-      {Icon&&<Icon/>}
+      {Icon&&<Icon />}
     </>
   )
 };
