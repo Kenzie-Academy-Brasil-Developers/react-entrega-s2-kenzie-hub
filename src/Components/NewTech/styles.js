@@ -35,7 +35,10 @@ export const Section = styled.section`
   @media (max-width:388px){
     width:260px;
   }
-
+  @media (max-width:1000px){
+    top:50%;
+    
+  }
   button{
     background:var(--lightBege);
     cursor:pointer;
