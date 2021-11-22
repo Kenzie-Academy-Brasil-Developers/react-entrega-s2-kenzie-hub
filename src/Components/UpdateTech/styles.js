@@ -133,7 +133,12 @@ export const Form = styled.form`
   display:flex;
   flex-direction:column;
   align-items:center;
-  
+  span{
+    font-size:12px;
+    top:100px;
+    color:#ff5778;
+    position:absolute;
+  }
 `
 export const Delete = styled.button`
   border-radius:10px;

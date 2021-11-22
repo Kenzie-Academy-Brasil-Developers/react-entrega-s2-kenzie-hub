@@ -13,9 +13,9 @@ import api from "./../../Services/api";
 
 const UpdateTech = ({ setIsBlured,setShowUpdateTech ,techAddedCount,setTechAddedCount,actualIdTech}) => {
   const [srtStatus, setStrStatus] = useState("");
- 
+  const [erroApi,setErroApi] = useState('')
   const [successTech,setSuccessTech] = useState(false);
- 
+  const [isErrored,setIsErrored] = useState(false)
  
   const handleModule = (event, strStatus) => {
     event.preventDefault();
@@ -40,6 +40,9 @@ const UpdateTech = ({ setIsBlured,setShowUpdateTech ,techAddedCount,setTechAdded
         setSuccessTech(true);
         setShowUpdateTech(false);
         setIsBlured(false);
+      }).catch(()=>{
+        setErroApi('Status is required');
+        setIsErrored(true);
       })
       
   };
@@ -52,7 +55,9 @@ const UpdateTech = ({ setIsBlured,setShowUpdateTech ,techAddedCount,setTechAdded
       }
     }).then(()=>{
       setShowUpdateTech(false);
-    }).catch(err=>console.log(err))
+    }).catch(()=>{
+
+    })
   }
   
   return (
@@ -69,18 +74,25 @@ const UpdateTech = ({ setIsBlured,setShowUpdateTech ,techAddedCount,setTechAdded
       </TechHeader>
       <Form >
         
-        
+        {isErrored&&<span>{erroApi}</span>}
           <DivModule>
+
             <Delete onClick={(event)=>{
               setIsBlured(false);
               handleDelete(event)} } >Delete</Delete>
-            <Button  onClick={(event) => handleModule(event, "Iniciante")}>
+            <Button  onClick={(event) => {
+              setIsErrored(false);
+              handleModule(event, "Iniciante")}}>
               Beginner
             </Button>
-            <Button  onClick={(event) => handleModule(event, "Intermediário")}>
+            <Button  onClick={(event) => {
+              setIsErrored(false);
+              handleModule(event, "Intermediário")}}>
               Intermediary
             </Button>
-            <Button   onClick={(event) => handleModule(event, "Avançado")}>
+            <Button   onClick={(event) => {
+              setIsErrored(false);
+              handleModule(event, "Avançado")}}>
               Advanced
             </Button>
           </DivModule>
