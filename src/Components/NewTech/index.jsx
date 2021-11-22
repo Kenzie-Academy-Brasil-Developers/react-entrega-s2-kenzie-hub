@@ -13,7 +13,7 @@ import * as yup from "yup";
 import { useState } from "react";
 import api from "./../../Services/api";
 import {DivError,ErrorsApi,CloseErr} from './../../Styles/SignUp/styles';
-const NewTech = ({ setShowNewTech ,techAddedCount,setTechAddedCount}) => {
+const NewTech = ({setIsBlured, setShowNewTech ,techAddedCount,setTechAddedCount}) => {
   const [srtStatus, setStrStatus] = useState("");
   const [erroApi,setErroApi] = useState('');
   const [successTech,setSuccessTech] = useState(false);
@@ -44,6 +44,7 @@ const NewTech = ({ setShowNewTech ,techAddedCount,setTechAddedCount}) => {
       .then(() => {
         setSuccessTech(true)
         setShowNewTech(false);
+        setIsBlured(false);
       })
       .catch(() => {
         setErroApi('Already on your list. Update it or delete.');
@@ -66,7 +67,9 @@ const NewTech = ({ setShowNewTech ,techAddedCount,setTechAddedCount}) => {
         <h2>
           Register New <span>Tech</span>
         </h2>
-        <button onClick={() => setShowNewTech(false)}>x</button>
+        <button onClick={() => {
+          setIsBlured(false)
+          setShowNewTech(false)}}>x</button>
       </TechHeader>
       <Form onSubmit={handleSubmit(handleNewTech)}>
         <InputsArea>

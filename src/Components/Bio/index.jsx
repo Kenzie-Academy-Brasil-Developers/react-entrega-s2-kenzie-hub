@@ -1,5 +1,5 @@
 import React from 'react';
-import {Name,Container,LogOut,ContainerProfile} from './styles';
+import {Name,Container,LogOut} from './styles';
 import {useHistory} from 'react-router-dom';
 import {FiUser} from 'react-icons/fi';
 import Icon from './../../Components/Icon';

@@ -67,8 +67,4 @@ export const LogOut = styled(Button)`
   transition-property: background;
       transition-duration:0.6s;
 `;
-export const ContainerProfile = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-`;
+

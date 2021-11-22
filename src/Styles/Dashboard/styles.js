@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes,css } from "styled-components";
 
 export const Container = styled.main`
   position: relative;
@@ -6,8 +6,10 @@ export const Container = styled.main`
   height: 100vh;
   flex-direction: column;
   background: var(--lightBege);
-      /* filter:blur(6px);
-      opacity:0.2; */
+  ${props=>props.blured&&css`
+    filter:blur(10px);
+  `}
+  transition: filter 0.7s ;
 `;
 export const Header = styled.div`
   

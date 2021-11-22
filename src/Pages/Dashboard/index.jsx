@@ -26,7 +26,7 @@ const Dashboard = ({auth,setAuth}) => {
   const [techAddedCount,setTechAddedCount] = useState(0);
   const [actualIdTech,setActualIdTech] = useState('');
   const [actualIdWork,setActualIdWork] = useState('');
-
+  const [isBlured,setIsBlured] = useState(false)
   
   if(!auth){
     return <Redirect to='/login'/>
@@ -34,7 +34,7 @@ const Dashboard = ({auth,setAuth}) => {
   return (
     <>
       <GlobalStyle scroll />
-      <Container>
+      <Container blured={isBlured}>
         <Header>
           <h1>
             KENZIE <span>Hub</span>
@@ -47,30 +47,34 @@ const Dashboard = ({auth,setAuth}) => {
           <TechsSection>
             <HeaderTech>
               <h2>My techs</h2>
-              <button onClick={()=>setShowNewTech(true)}>+</button>
+              <button onClick={()=>{
+                setIsBlured(true)
+                setShowNewTech(true)}}>+</button>
             </HeaderTech>
               <ListDiv>
-                <ListTech techAddedCount={techAddedCount}  setShowUpdateTech={setShowUpdateTech} setActualIdTech={setActualIdTech}/>
+                <ListTech setIsBlured={setIsBlured}techAddedCount={techAddedCount}  setShowUpdateTech={setShowUpdateTech} setActualIdTech={setActualIdTech}/>
 
               </ListDiv>
           </TechsSection>
           <WorksSection>
             <HeaderWork>
               <h2>My Works</h2>
-              <button onClick={()=>setShowNewWork(true)}>+</button>
+              <button onClick={()=>{
+                setIsBlured(true)
+                setShowNewWork(true)}}>+</button>
             </HeaderWork>
             <div>
-            <ListWork setActualIdWork={setActualIdWork} workAddedCount={workAddedCount}/>
+            <ListWork setIsBlured={setIsBlured} setActualIdWork={setActualIdWork} setShowUpdateWork={setShowUpdateWork} />
 
             </div>
           </WorksSection>
         </ContainerSection>
       </Container>
 
-      {showNewTech&&<NewTech setShowNewTech={setShowNewTech}  setTechAddedCount={setTechAddedCount} techAddedCount={techAddedCount}/> }
-      {showNewWork&&<NewWork setShowNewWork={setShowNewWork} setWorkAddedCount={setWorkAddedCount} workAddedCount={workAddedCount}/>}
-      { showUpdateTech&& <UpdateTech setShowUpdateTech={setShowUpdateTech} techAddedCount={techAddedCount} setTechAddedCount={setTechAddedCount} actualIdTech={actualIdTech}/>}
-      {showUpdateWork&&<UpdateWork setShowUpdateWork={setShowUpdateWork} actualIdWork={actualIdWork} setActualIdWork={setActualIdWork}/>}
+      {showNewTech&&<NewTech setIsBlured={setIsBlured}setShowNewTech={setShowNewTech}  setTechAddedCount={setTechAddedCount} techAddedCount={techAddedCount}/> }
+      {showNewWork&&<NewWork setIsBlured={setIsBlured} setShowNewWork={setShowNewWork} setWorkAddedCount={setWorkAddedCount} workAddedCount={workAddedCount}/>}
+      { showUpdateTech&& <UpdateTech setIsBlured={setIsBlured}setShowUpdateTech={setShowUpdateTech} techAddedCount={techAddedCount} setTechAddedCount={setTechAddedCount} actualIdTech={actualIdTech}/>}
+      {showUpdateWork&&<UpdateWork setIsBlured={setIsBlured}setWorkAddedCount={setWorkAddedCount}setShowUpdateWork={setShowUpdateWork} actualIdWork={actualIdWork} setShowNewWork={setShowNewWork} setActualIdWork={setActualIdWork}/>}
     </>
   );
 };

@@ -1,20 +1,17 @@
 import {
   Section,
   TechHeader,
-  InputsArea,
   Create,
   Button,
   Delete,
   DivModule,
   Form,
 } from "./styles";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+
 import { useState } from "react";
 import api from "./../../Services/api";
 
-const UpdateTech = ({ setShowUpdateTech ,techAddedCount,setTechAddedCount,actualIdTech}) => {
+const UpdateTech = ({ setIsBlured,setShowUpdateTech ,techAddedCount,setTechAddedCount,actualIdTech}) => {
   const [srtStatus, setStrStatus] = useState("");
  
   const [successTech,setSuccessTech] = useState(false);
@@ -24,7 +21,7 @@ const UpdateTech = ({ setShowUpdateTech ,techAddedCount,setTechAddedCount,actual
     event.preventDefault();
     setStrStatus(strStatus);
   };
-  console.log(actualIdTech)
+  
   
   const handleNewTech = (event) => {
     event.preventDefault()
@@ -40,8 +37,9 @@ const UpdateTech = ({ setShowUpdateTech ,techAddedCount,setTechAddedCount,actual
         }
       })
       .then(() => {
-        setSuccessTech(true)
+        setSuccessTech(true);
         setShowUpdateTech(false);
+        setIsBlured(false);
       })
       
   };
@@ -65,20 +63,24 @@ const UpdateTech = ({ setShowUpdateTech ,techAddedCount,setTechAddedCount,actual
         <h2>
           Update <span>status</span>
         </h2>
-        <button onClick={() => setShowUpdateTech(false)}>x</button>
+        <button onClick={() => {
+          setIsBlured(false);
+          setShowUpdateTech(false)}}>x</button>
       </TechHeader>
       <Form >
         
         
           <DivModule>
-            <Delete onClick={(event)=>handleDelete(event) } >Delete</Delete>
-            <Button onClick={(event) => handleModule(event, "Iniciante")}>
+            <Delete onClick={(event)=>{
+              setIsBlured(false);
+              handleDelete(event)} } >Delete</Delete>
+            <Button  onClick={(event) => handleModule(event, "Iniciante")}>
               Beginner
             </Button>
-            <Button onClick={(event) => handleModule(event, "Intermediário")}>
+            <Button  onClick={(event) => handleModule(event, "Intermediário")}>
               Intermediary
             </Button>
-            <Button onClick={(event) => handleModule(event, "Avançado")}>
+            <Button   onClick={(event) => handleModule(event, "Avançado")}>
               Advanced
             </Button>
           </DivModule>

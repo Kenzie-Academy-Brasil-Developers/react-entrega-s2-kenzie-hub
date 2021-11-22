@@ -19,12 +19,9 @@ import closedEye from './../../Assets/closed-eye.png';
 import openedEye from './../../Assets/opened-eye.png';
 import {
   FiUser,
-  FiEye,
   FiLinkedin,
   FiTag,
   FiMail,
-  FiEyeOff,
- 
 } from "react-icons/fi";
 import Success from "./../../Components/Success/index";
 import { useForm } from "react-hook-form";
@@ -34,7 +31,7 @@ import { useState } from "react";
 import api from './../../Services/api';
 
 const SignUp = ({togglePasswordVisiblity,setPasswordShown, passwordShown,setConfPasswordShown,confPasswordShown, auth }) => {
-  const [dataResponse,setDataResponse] = useState({});
+ 
   const [errorsApi,setErrorsApi] = useState('');
   
   const [success,setSuccess] = useState(false);
@@ -77,8 +74,6 @@ const SignUp = ({togglePasswordVisiblity,setPasswordShown, passwordShown,setConf
     api.post('/users',user)
     .then(response=>{
      setSuccess(true);
-     setDataResponse({...response.data})
-     return setDataResponse({...response})
     
     })
     .catch(err=>{
@@ -182,7 +177,7 @@ const SignUp = ({togglePasswordVisiblity,setPasswordShown, passwordShown,setConf
                   )
                 }
                 src={
-                  passwordShown
+                  confPasswordShown
                     ? openedEye
                     : closedEye
                 }

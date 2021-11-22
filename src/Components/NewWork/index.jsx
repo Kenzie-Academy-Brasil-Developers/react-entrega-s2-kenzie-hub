@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { useState } from "react";
 import api from "./../../Services/api";
 import { Form } from "./styles";
-const NewWork = ({ setShowNewWork, setWorkAddedCount, workAddedCount }) => {
+const NewWork = ({setIsBlured, setShowNewWork, setWorkAddedCount, workAddedCount }) => {
   const [successWork, setSuccessWork] = useState(false);
   const schema = yup.object().shape({
     title: yup.string().required("Title is required"),
@@ -28,7 +28,8 @@ const NewWork = ({ setShowNewWork, setWorkAddedCount, workAddedCount }) => {
       })
       .then((_) => {
         setSuccessWork(true);
-        setShowNewWork(false)
+        setShowNewWork(false);
+        setIsBlured(false);
       })
       .catch((err) => {});
   };
@@ -39,7 +40,9 @@ const NewWork = ({ setShowNewWork, setWorkAddedCount, workAddedCount }) => {
         <h2>
           Register New <span>Work</span>
         </h2>
-        <button onClick={() => setShowNewWork(false)}>x</button>
+        <button onClick={() =>{ 
+          setIsBlured(false)
+          setShowNewWork(false)}}>x</button>
       </TechHeader>
       <Form onSubmit={handleSubmit(handleNewWork)}>
         <InputsArea>

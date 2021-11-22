@@ -3,7 +3,7 @@ import { CardsContainer } from "./styles";
 import api from "./../../Services/api";
 import { useState, useEffect } from "react";
 
-const ListTech = ({ techAddedCount, setShowUpdateTech ,setActualIdTech}) => {
+const ListTech = ({setIsBlured, techAddedCount, setShowUpdateTech ,setActualIdTech}) => {
   const [listTechs, setListTechs] = useState([]);
   const { id } = JSON.parse(localStorage.getItem("@kenzieHub:user"));
 
@@ -14,7 +14,7 @@ const ListTech = ({ techAddedCount, setShowUpdateTech ,setActualIdTech}) => {
         setListTechs([...response.data.techs]);
       })
       .catch((err) => console.log(err));
-  }, [techAddedCount, id, listTechs]);
+  }, [id,listTechs]);
 
   return (
     <CardsContainer>
@@ -25,6 +25,7 @@ const ListTech = ({ techAddedCount, setShowUpdateTech ,setActualIdTech}) => {
             key={index}
             setShowUpdateTech={setShowUpdateTech}
             setActualIdTech={setActualIdTech}
+            setIsBlured={setIsBlured}
             listTechs={listTechs}
             id={id}
             title={title}

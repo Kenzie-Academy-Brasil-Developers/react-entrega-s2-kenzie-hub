@@ -1,9 +1,16 @@
-import styled from "styled-components";
-import {slideToDown} from '../NewTech/styles';
+import styled,{keyframes} from "styled-components";
 
+const slideToDown = keyframes`
+from{
+  top:-10px;
+}
+to{
+  top:60%;
+}
+`
 export const Section = styled.section`
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   z-index:1;
   transform: translate(-50%, -50%);
@@ -18,7 +25,7 @@ export const Section = styled.section`
   align-items:center;
   justify-content:space-between;
   box-shadow:4px 4px 2px var(--purple);
-  animation : ${slideToDown} 1.2s cubic-bezier( 0.68, -0.55, 0.265, 1.55 );
+  animation : ${slideToDown} 1.2s ease-in-out;
   @media (max-width:388px){
     width:260px;
   }
@@ -52,6 +59,7 @@ export const TechHeader = styled.div`
   
 `;
 export const InputsArea = styled.div`
+width:100%;
   div{
     margin:2px 0;
     width:100%;
@@ -111,5 +119,6 @@ export const Form = styled.form`
   display:flex;
   flex-direction:column;
   align-items:center;
+   width:100%;
   
 `

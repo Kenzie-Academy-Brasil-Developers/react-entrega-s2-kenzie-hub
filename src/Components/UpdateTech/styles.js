@@ -1,4 +1,4 @@
-import styled,{keyframes} from "styled-components";
+import styled,{keyframes,css} from "styled-components";
 
 export const slideToDown =keyframes`
   from{
@@ -122,6 +122,8 @@ export const Button = styled.button`
         
       }
       transition:background 0.6s;
+      background:${props=>props.focus?css`black`:css`red`}
+      
     
 `
 export const Form = styled.form`

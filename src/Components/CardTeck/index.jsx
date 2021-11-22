@@ -2,13 +2,14 @@ import {Container,DivIcon,Description,Tech,EditDiv} from './styles';
 import Icon from '../Icon'
 import {FiCodesandbox, FiEdit2 } from 'react-icons/fi'
 
-const CardTech = ({title,status,id,listTechs,setShowUpdateTech,setActualIdTech})=>{
+const CardTech = ({setIsBlured,title,status,id,listTechs,setShowUpdateTech,setActualIdTech})=>{
   
   const handleUpdate = (event)=>{
     event.preventDefault()
     const tech = listTechs.find(element=>element.id===id);
     setActualIdTech(tech.id);
     setShowUpdateTech(true);
+    setIsBlured(true);
   }
   return (
     <>
