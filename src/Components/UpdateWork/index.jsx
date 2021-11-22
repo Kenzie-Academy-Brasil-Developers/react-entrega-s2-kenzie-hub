@@ -18,20 +18,19 @@ const UpdateWork = ({
   setShowNewWork,
   setWorkAddedCount,
   workAddedCount,
-  setIsBlured
+  setIsBlured,
+  setWorks,
+  works,
+  setValueInputDescription,
+  valueInputDescription,
+  valueInputTitle,
+  setValueInputTitle,
+  valueInputDeploy,
+  setValueInputDeploy
 }) => {
   const [successWork, setSuccessWork] = useState(false);
-  const user = JSON.parse(localStorage.getItem("@kenzieHub:user"));
-  const [ works,setWorks] = useState([])
-  const {id} = user;
-  useEffect(()=>{
-    api.get(`/users/${id}`).then(res=>{
-      setWorks([...res.data.works])
-    })
 
-  },[actualIdWork, id]);
-  const selectedWork = works.find(el=>el.id===actualIdWork);
- 
+  
   const schema = yup.object().shape({
     title: yup.string().required("Title is required"),
     description: yup.string().required("Description is required"),
@@ -90,9 +89,9 @@ const UpdateWork = ({
             <Input
               id="techName"
               type="text"
-              placeholder={selectedWork?.title}
               {...register("title")}
-              
+              value={valueInputTitle}
+              onChange={(event)=>setValueInputTitle(event.target.value)}
             />
             <span>{errors.title?.message}</span>
           </div>
@@ -100,18 +99,20 @@ const UpdateWork = ({
             <Input
               description
               type="text"
-              placeholder={selectedWork?.description}
+              value={valueInputDescription}
+             
               {...register("description")}
-              
+              onChange={(event)=>setValueInputDescription(valueInputDescription)}
             />
             <span>{errors.description?.message}</span>
           </div>
           <div>
             <Input
               type="text"
-              placeholder={selectedWork?.deploy_url}
+              value={valueInputDeploy}
+           
               {...register("deploy_url")}
-              
+              onChange={(event)=>setValueInputDeploy(event.target.value)}
             />
             <span>{errors.deploy_url?.message}</span>
           </div>

@@ -1,6 +1,7 @@
 import { Container, DivIcon, Description, Tech, EditDiv } from "./styles";
 import Icon from "../Icon";
 import { FiGithub, FiEdit2 } from "react-icons/fi";
+import { useEffect } from "react";
 
 const CardWork = ({
   listWorks,
@@ -10,15 +11,18 @@ const CardWork = ({
   deploy_url,
   setActualIdWork,
   setShowUpdateWork,
-  setIsBlured
+  setIsBlured,
+  setValues
 }) => {
   const handleUpdate = (event) => {
     event.preventDefault();
+    setValues(id);
     const tech = listWorks.find((element) => element.id === id);
     setActualIdWork(tech.id);
     setShowUpdateWork(true);
     setIsBlured(true);
   };
+  
   return (
     <>
       <Container>
@@ -35,7 +39,9 @@ const CardWork = ({
             {title}
           </a>
         </Description>
-        <EditDiv onClick={(event) => handleUpdate(event)}>
+        <EditDiv onClick={(event) => {
+        
+          handleUpdate(event)}}>
           <Icon icon={FiEdit2} />
         </EditDiv>
       </Container>

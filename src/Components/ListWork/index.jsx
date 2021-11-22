@@ -2,7 +2,7 @@ import CardWork from "./../../Components/CardWork";
 import { CardsContainer } from "./styles";
 import api from "./../../Services/api";
 import { useState, useEffect } from "react";
-const ListWork = ({setIsBlured, setActualIdWork, setShowUpdateWork }) => {
+const ListWork = ({setIsBlured, setActualIdWork, setShowUpdateWork,setValues }) => {
   const [listWorks, setListWorks] = useState([]);
   const { id } = JSON.parse(localStorage.getItem("@kenzieHub:user"));
   const token = JSON.parse(localStorage.getItem("@kenzieHub:token"));
@@ -26,6 +26,7 @@ const ListWork = ({setIsBlured, setActualIdWork, setShowUpdateWork }) => {
           <CardWork
             key={index}
             listWorks={listWorks}
+            setValues={setValues}
             id={id}
             setShowUpdateWork={setShowUpdateWork}
             setActualIdWork={setActualIdWork}

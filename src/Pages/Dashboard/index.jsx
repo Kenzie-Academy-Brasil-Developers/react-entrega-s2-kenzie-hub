@@ -16,7 +16,8 @@ import ListTech from "./../../Components/ListTech/index";
 import ListWork from "./../../Components/ListWork/index";
 import GlobalStyle from "./../../Styles/Global/styles";
 import {Redirect} from 'react-router-dom';
-import {useState} from 'react'
+import {useEffect, useState} from 'react';
+import api from './../../Services/api'
 const Dashboard = ({auth,setAuth}) => {
   const [showNewTech,setShowNewTech] = useState(false);
   const [showUpdateTech,setShowUpdateTech] = useState(false);
@@ -26,10 +27,32 @@ const Dashboard = ({auth,setAuth}) => {
   const [techAddedCount,setTechAddedCount] = useState(0);
   const [actualIdTech,setActualIdTech] = useState('');
   const [actualIdWork,setActualIdWork] = useState('');
-  const [isBlured,setIsBlured] = useState(false)
+  const [isBlured,setIsBlured] = useState(false);
+  const [ works,setWorks] = useState([]);
+  const [valueInputDescription,setValueInputDescription] = useState('');
+  const [valueInputTitle,setValueInputTitle] = useState('');
+  const [valueInputDeploy,setValueInputDeploy] = useState('')
+  const user = JSON.parse(localStorage.getItem("@kenzieHub:user"));
   
+  const {id} = user;
+    
+  useEffect(()=>{
+    api.get(`/users/${id}`).then(res=>{
+      setWorks([...res.data.works])
+    })
+
+  },[actualIdWork, id, setWorks]);
+
   if(!auth){
     return <Redirect to='/login'/>
+  } 
+  
+  const setValues = (actualIdWork)=>{
+    const selectedWork = works.find(el=>el.id===actualIdWork);
+    console.log(works)
+    setValueInputDescription(selectedWork?.description);
+    setValueInputTitle(selectedWork?.title);
+    setValueInputDeploy(selectedWork?.deploy_url);
   }
   return (
     <>
@@ -61,10 +84,12 @@ const Dashboard = ({auth,setAuth}) => {
               <h2>My Works</h2>
               <button onClick={()=>{
                 setIsBlured(true)
-                setShowNewWork(true)}}>+</button>
+                setShowNewWork(true)
+                
+                }}>+</button>
             </HeaderWork>
             <div>
-            <ListWork setIsBlured={setIsBlured} setActualIdWork={setActualIdWork} setShowUpdateWork={setShowUpdateWork} />
+            <ListWork setValues={setValues}setIsBlured={setIsBlured} setActualIdWork={setActualIdWork} setShowUpdateWork={setShowUpdateWork} />
 
             </div>
           </WorksSection>
@@ -74,7 +99,7 @@ const Dashboard = ({auth,setAuth}) => {
       {showNewTech&&<NewTech setIsBlured={setIsBlured}setShowNewTech={setShowNewTech}  setTechAddedCount={setTechAddedCount} techAddedCount={techAddedCount}/> }
       {showNewWork&&<NewWork setIsBlured={setIsBlured} setShowNewWork={setShowNewWork} setWorkAddedCount={setWorkAddedCount} workAddedCount={workAddedCount}/>}
       { showUpdateTech&& <UpdateTech setIsBlured={setIsBlured}setShowUpdateTech={setShowUpdateTech} techAddedCount={techAddedCount} setTechAddedCount={setTechAddedCount} actualIdTech={actualIdTech}/>}
-      {showUpdateWork&&<UpdateWork setIsBlured={setIsBlured}setWorkAddedCount={setWorkAddedCount}setShowUpdateWork={setShowUpdateWork} actualIdWork={actualIdWork} setShowNewWork={setShowNewWork} setActualIdWork={setActualIdWork}/>}
+      {showUpdateWork&&<UpdateWork setValueInputDeploy={setValueInputDeploy} valueInputDeploy={valueInputDeploy}setValueInputTitle={setValueInputTitle} valueInputDescription={valueInputDescription}setValueInputDescription={setValueInputDescription}valueInputTitle={valueInputTitle}  works={works} setWorks={setWorks}setIsBlured={setIsBlured}setWorkAddedCount={setWorkAddedCount}setShowUpdateWork={setShowUpdateWork} actualIdWork={actualIdWork} setShowNewWork={setShowNewWork} setActualIdWork={setActualIdWork}/>}
     </>
   );
 };
