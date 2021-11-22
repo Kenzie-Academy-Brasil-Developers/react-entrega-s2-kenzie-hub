@@ -102,7 +102,7 @@ const UpdateWork = ({
               value={valueInputDescription}
              
               {...register("description")}
-              onChange={(event)=>setValueInputDescription(valueInputDescription)}
+              onChange={(event)=>setValueInputDescription(event.target.value)}
             />
             <span>{errors.description?.message}</span>
           </div>
