@@ -65,11 +65,13 @@ export const InputsArea = styled.div`
     margin: 2px 0;
     width: 100%;
     position: relative;
+    
     span {
+      font-size:12px;
       position: absolute;
       color: #ff5778;
       left: 0;
-      top: -8px;
+      top: -10px;
     }
   }
 `;

@@ -65,6 +65,7 @@ width:100%;
     width:100%;
     position:relative;
     span{
+      font-size:12px;
       position:absolute;
       color:#ff5778;
       left:0; 

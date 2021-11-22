@@ -87,6 +87,7 @@ export const InputsArea = styled.div`
   }
   span{
     top:74px;
+    font-size:12px; 
     color:#ff5778;
     position:absolute;
   }
@@ -122,6 +123,9 @@ export const Button = styled.button`
         cursor:pointer;
         background:var(--purple);
         
+      }
+      :focus{
+        background:black;
       }
       transition:background 0.6s;
     

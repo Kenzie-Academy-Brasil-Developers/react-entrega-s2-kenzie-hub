@@ -84,6 +84,7 @@ export const InputsArea = styled.div`
     
   }
   span{
+    font-size:12px;
     top:74px;
     color:#ff5778;
     position:absolute;

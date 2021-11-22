@@ -45,9 +45,11 @@ const NewTech = ({setIsBlured, setShowNewTech ,techAddedCount,setTechAddedCount}
         setSuccessTech(true)
         setShowNewTech(false);
         setIsBlured(false);
+        
       })
-      .catch(() => {
-        setErroApi('Already on your list. Update it or delete.');
+      .catch((err) => {
+        console.log(err)
+        setErroApi('Missing status or already on your list.');
         setIsErrored(true);
       });
   };

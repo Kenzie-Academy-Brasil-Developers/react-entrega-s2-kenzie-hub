@@ -80,7 +80,9 @@ const UpdateWork = ({
         <h2>
           Update your <span>Work</span>
         </h2>
-        <button onClick={() =>setShowUpdateWork(false)}>x</button>
+        <button onClick={() =>{
+          setIsBlured(false);
+          setShowUpdateWork(false)}}>x</button>
       </TechHeader>
       <Form onSubmit={handleSubmit(handleNewWork)}>
         <InputsArea>
