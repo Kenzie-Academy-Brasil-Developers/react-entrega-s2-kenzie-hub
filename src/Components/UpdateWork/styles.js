@@ -110,6 +110,9 @@ export const Button = styled.button`
     background: var(--purple);
   }
   transition: background 0.6s;
+  :focus{
+        background:var(--purple);
+      }
 `;
 export const Form = styled.form`
   display: flex;

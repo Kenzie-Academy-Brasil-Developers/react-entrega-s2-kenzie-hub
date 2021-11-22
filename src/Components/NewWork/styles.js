@@ -113,6 +113,9 @@ export const Button = styled.button`
         background:var(--purple);
         
       }
+       :focus{
+        background:var(--purple);
+      }
       transition:background 0.6s;
     
 `
