@@ -27,7 +27,7 @@ export const ContainerSection = styled.section`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: Start;
   margin-top: 40px;
   @media (max-width: 1174px) {
     flex-direction: column;
@@ -50,9 +50,9 @@ export const TechsSection = styled.section`
   display: flex;
   flex-direction: column;
   margin: 20px;
-  min-height: 300px;
+  min-height: 390px;
   animation:${slideToLeft} 2s ease-in-out;
-  border-radius: 50px 8px 50px 50px;
+  border-radius: 50px 8px 30px 8px;
   box-shadow: 6px 6px 2px var(--pink);
   padding:10px;
   @media (max-width: 440px) {
@@ -76,6 +76,7 @@ export const BioSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top:20px;
 `;
 export const HeaderTech = styled.div`
  

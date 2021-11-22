@@ -113,3 +113,11 @@ export const Form = styled.form`
   align-items:center;
   
 `
+export const Delete = styled.button`
+  border-radius:10px;
+      margin:4px;
+      font-size:14px;
+      border:2px solid var(--purple);
+      padding:4px;
+      border:2px solid #ff5778;
+`

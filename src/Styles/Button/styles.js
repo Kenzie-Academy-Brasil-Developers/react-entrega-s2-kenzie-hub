@@ -10,7 +10,7 @@ const Button = styled.button`
   cursor:pointer;
   color:${props=>props.fontColorBlack? css`var(--black)`:css`var(--lightBege)`};
   border:2px solid ${props=>props.borderPink?css`var(--pink)`:css`var(--black)`};
-  background:${props=>props.black?css`var(--black)`:css`var(--lightBege)`};
+  background:${props=>props.black&&css`var(--black)`};
   @media (max-width:1100px){
     width:240px;
   }

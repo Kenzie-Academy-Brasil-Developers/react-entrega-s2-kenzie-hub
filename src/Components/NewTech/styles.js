@@ -18,11 +18,11 @@ export const Section = styled.section`
   transform: translate(-50%, -50%);
   color: var(--black);
   width: 320px;
-  height: 320px;
+  height: 340px;
   border-radius: 10px;
   color:var(--lightBege);
   display:flex;
-  animation:${slideToDown} 1.2s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) ;
+  animation:${slideToDown} 0.7s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) ;
   flex-direction:column;
   background-color: var(--black);
   border:3px solid var(--purple);
@@ -37,7 +37,7 @@ export const Section = styled.section`
   }
   @media (max-width:1000px){
     top:50%;
-    
+
   }
   button{
     background:var(--lightBege);
@@ -82,26 +82,12 @@ export const InputsArea = styled.div`
     }
     
   }
-  ul{
-    margin:10px 0;
-    list-style:none; 
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    li{
-      border-radius:10px;
-      margin:4px;
-      font-size:14px;
-      border:2px solid var(--purple);
-      padding:4px;
-      :hover{
-        cursor:pointer;
-        background:var(--purple);
-        
-      }
-      transition:background 0.6s;
-    }
+  span{
+    top:74px;
+    color:#ff5778;
+    position:absolute;
   }
+ 
 `;
 export const Create = styled.button`
   width:220px;
@@ -115,3 +101,31 @@ export const Create = styled.button`
   }
   transition:background 0.6s;
 `;
+export const DivModule = styled.div`
+  margin:10px 0;
+    list-style:none; 
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+`
+export const Button = styled.button`
+
+      border-radius:10px;
+      margin:4px;
+      font-size:14px;
+      border:2px solid var(--purple);
+      padding:4px;
+      :hover{
+        cursor:pointer;
+        background:var(--purple);
+        
+      }
+      transition:background 0.6s;
+    
+`
+export const Form = styled.form`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  
+`

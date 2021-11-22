@@ -2,7 +2,14 @@ import {Container,DivIcon,Description,Tech,EditDiv} from './styles';
 import Icon from '../Icon'
 import {FiCodesandbox, FiEdit2 } from 'react-icons/fi'
 
-const CardTech = ()=>{
+const CardTech = ({title,status,id,listTechs,setShowUpdateTech,setActualIdTech})=>{
+  
+  const handleUpdate = (event)=>{
+    event.preventDefault()
+    const tech = listTechs.find(element=>element.id===id);
+    setActualIdTech(tech.id);
+    setShowUpdateTech(true);
+  }
   return (
     <>
     <Container>
@@ -12,12 +19,12 @@ const CardTech = ()=>{
       
       <Description>
         <Tech>
-          Javascript
+          {title}
         </Tech>
-        <p>Intermediary</p>
+        <p>{status}</p>
       </Description>
-      <EditDiv>
-        <Icon icon={FiEdit2}/>
+      <EditDiv onClick={(event)=>handleUpdate(event)}>
+        <Icon icon={FiEdit2} />
       </EditDiv>
     </Container>
       

@@ -1,11 +1,11 @@
-import { Section, TechHeader, InputsArea, Create, Input } from "./styles";
+import { Section, TechHeader, InputsArea, Create, Input,Delete } from "./styles";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
-import api from "./../../Services/api";
+import api from "../../Services/api";
 import { Form } from "./styles";
-const NewWork = ({ setShowNewWork, setWorkAddedCount, workAddedCount }) => {
+const UpdateWork = ({ setShowUpdateWork,actualIdWork,setShowNewWork, setWorkAddedCount, workAddedCount }) => {
   const [successWork, setSuccessWork] = useState(false);
   const schema = yup.object().shape({
     title: yup.string().required("Title is required"),
@@ -32,7 +32,17 @@ const NewWork = ({ setShowNewWork, setWorkAddedCount, workAddedCount }) => {
       })
       .catch((err) => {});
   };
- 
+  const handleDelete=(event)=>{
+    const token = JSON.parse(localStorage.getItem('@kenzieHub:token'));
+    event.preventDefault();
+    api.delete(`/users/techs/${actualIdWork}`,{
+      headers:{ 
+        Authorization: `Bearer ${token}`
+      }
+    }).then(()=>{
+      setShowUpdateWork(false);
+    }).catch(err=>console.log(err))
+  }
   return (
     <Section>
       <TechHeader>
@@ -75,9 +85,10 @@ const NewWork = ({ setShowNewWork, setWorkAddedCount, workAddedCount }) => {
         <Create type="submit" >
           Create
         </Create>
+        <Delete onClick={()=>handleDelete()}>Delete</Delete>
       </Form>
     </Section>
   );
 };
 
-export default NewWork;
+export default UpdateWork;

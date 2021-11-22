@@ -261,8 +261,9 @@ export const slideToDown = keyframes`
 export const DivError = styled.div`
   min-width:280px;
   padding:16px;
+  
   border-radius:10px;
-  z-index:2;
+  z-index:4;
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
