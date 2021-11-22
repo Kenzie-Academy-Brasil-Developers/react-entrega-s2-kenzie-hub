@@ -77,7 +77,7 @@ const SignUp = ({togglePasswordVisiblity,setPasswordShown, passwordShown,setConf
     
     })
     .catch(err=>{
-    
+      setStrModule('');
       if(err.response.data.message[0]==='course_module is required'){
         
         setErrorsApi(['Module required'])
