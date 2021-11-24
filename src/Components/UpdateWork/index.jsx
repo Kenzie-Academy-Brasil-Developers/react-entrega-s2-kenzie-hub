@@ -117,7 +117,7 @@ const UpdateWork = ({
             <span>{errors.deploy_url?.message}</span>
           </div>
         </InputsArea>
-        <Create type="submit">Create</Create>
+        <Create type="submit">Update</Create>
         <Delete onClick={(event) => {
           setIsBlured(false);
           handleDelete(event)}}>Delete</Delete>

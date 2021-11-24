@@ -53,7 +53,7 @@ export const TechsSection = styled.section`
   flex-direction: column;
   margin: 20px;
   min-height: 390px;
-  animation:${slideToLeft} 2s ease-in-out;
+  animation:${slideToLeft} 1s ease-in-out;
   border-radius: 50px 8px 30px 8px;
   box-shadow: 6px 6px 2px var(--pink);
   padding:10px;

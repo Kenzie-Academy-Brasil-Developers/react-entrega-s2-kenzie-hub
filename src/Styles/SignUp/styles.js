@@ -32,7 +32,7 @@ export const NewWelcome = styled.section`
   width:100%;
   background:var(--lightBege);
   @media (min-width:768px){
-    animation: ${slideToRight} 3s ease-in-out;
+    animation: ${slideToRight} 1.2s ease-in-out;
   }
   
   h2{
@@ -81,7 +81,7 @@ export const Form = styled.form`
   background:var(--darkBlue);
   padding:16px;
   @media(min-width:768px){
-    animation: ${slideToLeft} 3s ease-in-out;
+    animation: ${slideToLeft} 1.2s ease-in-out;
   }
   
   h2{

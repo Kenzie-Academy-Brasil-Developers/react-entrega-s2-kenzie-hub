@@ -97,7 +97,7 @@ const UpdateTech = ({ setIsBlured,setShowUpdateTech ,techAddedCount,setTechAdded
             </Button>
           </DivModule>
         
-        <Create onClick={(event)=>handleNewTech(event) }>Create</Create>
+        <Create onClick={(event)=>handleNewTech(event) }>Update</Create>
       </Form>
     </Section>
    

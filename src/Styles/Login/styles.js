@@ -26,7 +26,7 @@ export const Welcome = styled.section`
   justify-content:space-evenly;
   padding:16px;
   @media (min-width:768px){
-    animation: ${slideToDown} 3s ease-in-out;
+    animation: ${slideToDown} 1.2s ease-in-out;
   }
   
   width:100%;
@@ -75,7 +75,7 @@ export const Form = styled.form`
   background:var(--lightBege);
   padding:16px;
   @media (min-width:768px){
-    animation: ${slideToLeft} 3s ease-in-out;
+    animation: ${slideToLeft} 1.2s ease-in-out;
   }
   
   h2{

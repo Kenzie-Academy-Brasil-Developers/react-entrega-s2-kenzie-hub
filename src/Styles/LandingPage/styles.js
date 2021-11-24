@@ -12,7 +12,7 @@ export const Container = styled.main`
     text-align:start;
     width:100%;
     align-items:center;
-    animation:${slideToDown} 2s ease-in-out;
+    animation:${slideToDown} 1s ease-in-out;
     h1{
       font-size:100px;
       padding:10px 0 10px 32px;
@@ -52,7 +52,7 @@ const slideToRight = keyframes`
 `
 export const Background = styled.div`
   @media (min-width:768px){
-    animation: ${slideToRight} 3s ease-in-out;
+    animation: ${slideToRight} 1.2s ease-in-out;
   }
   
   @media screen and (min-width:1100px){
@@ -79,7 +79,7 @@ export const Description = styled.div`
   flex-direction:column;
   justify-content:space-evenly;
   @media (min-width:768px){
-    animation :${slideToLeft} 3s ease-in-out;
+    animation :${slideToLeft} 1.2s ease-in-out;
   }
   
   p{
