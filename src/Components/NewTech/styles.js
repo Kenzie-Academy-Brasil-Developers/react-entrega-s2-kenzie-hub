@@ -3,10 +3,10 @@ import styled,{keyframes} from "styled-components";
 export const slideToDown =keyframes`
   from{
     top:-50px;
-    opacity:0;
+    
   }
   to{
-    opacity:1;
+  
     top:50%;
     
   }
@@ -22,7 +22,7 @@ export const Section = styled.section`
   border-radius: 10px;
   color:var(--lightBege);
   display:flex;
-  animation:${slideToDown} 1s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) ;
+  animation:${slideToDown} 1s ease-in-out ;
   flex-direction:column;
   background-color: var(--black);
   border:3px solid var(--purple);

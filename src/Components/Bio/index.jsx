@@ -26,7 +26,7 @@ const Bio = ({setAuth})=>{
       </div>
       <div>
         <h3>Contact:</h3>
-        <p>{contact}</p>
+        <a href={contact} rel="noreferrer noopener" target="_blank">{contact.length >= 20 ? `${contact.substr(0, 20)}...` : contact}</a>
       </div>
       <LogOut onClick={()=>handleLogOut()}>Log out</LogOut>
     </Container>
