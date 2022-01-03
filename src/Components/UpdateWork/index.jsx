@@ -90,7 +90,7 @@ const UpdateWork = ({
               id="techName"
               type="text"
               {...register("title")}
-              value={valueInputTitle}
+              
               onChange={(event)=>setValueInputTitle(event.target.value)}
             />
             <span>{errors.title?.message}</span>
@@ -99,7 +99,7 @@ const UpdateWork = ({
             <Input
               description
               type="text"
-              value={valueInputDescription}
+              
              
               {...register("description")}
               onChange={(event)=>setValueInputDescription(event.target.value)}
@@ -109,7 +109,7 @@ const UpdateWork = ({
           <div>
             <Input
               type="text"
-              value={valueInputDeploy}
+              
            
               {...register("deploy_url")}
               onChange={(event)=>setValueInputDeploy(event.target.value)}

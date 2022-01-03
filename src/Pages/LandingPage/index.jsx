@@ -13,7 +13,7 @@ const LandingPage = ({auth})=>{
         <Background/>
         <Description>
           <p>
-          Com a KENZIE <span>Hub</span> você adiciona tecnologias aprendidas ou trabalhos que desenvolveu,e acompanha o crescimento do seu dashboard<span>!</span>
+          Com a KENZIE <span>Hub</span> você adiciona tecnologias aprendidas ou trabalhos que desenvolveu, e acompanha o crescimento do seu Dashboard<span>!</span>
           </p>
           <div>
             <Button borderPink fontColorBlack onClick={()=>history.push('/login')}>
