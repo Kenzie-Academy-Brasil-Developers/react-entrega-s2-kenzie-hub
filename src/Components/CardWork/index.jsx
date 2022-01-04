@@ -31,7 +31,7 @@ const CardWork = ({
         </DivIcon>
 
         <Description>
-          <Tech>{title}</Tech>
+          <Tech>{title.length >= 15 ? title.substr(0, 15) : title}</Tech>
           <p>
             {description.length >= 65 ? description.substr(0, 65) : description}
           </p>

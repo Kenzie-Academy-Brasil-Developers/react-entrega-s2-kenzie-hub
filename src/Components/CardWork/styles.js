@@ -56,7 +56,7 @@ export const Tech = styled.h2`
 `;
 export const EditDiv = styled.div`
   position:absolute;
-  right:10px;
+  right:5px;
   top:10px;
   svg{
     padding:4px;
