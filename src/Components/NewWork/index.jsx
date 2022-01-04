@@ -48,7 +48,7 @@ const NewWork = ({setIsBlured, setShowNewWork, setWorkAddedCount, workAddedCount
         <InputsArea>
           <div>
             <Input
-              id="techName"
+             
               type="text"
               placeholder="Work Name"
               {...register("title")}

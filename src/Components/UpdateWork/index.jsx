@@ -87,10 +87,10 @@ const UpdateWork = ({
         <InputsArea>
           <div>
             <Input
-              id="techName"
+              
               type="text"
               {...register("title")}
-              
+              placeholder="Work Name"
               onChange={(event)=>setValueInputTitle(event.target.value)}
             />
             <span>{errors.title?.message}</span>
@@ -100,7 +100,7 @@ const UpdateWork = ({
               description
               type="text"
               
-             
+              placeholder="Description"
               {...register("description")}
               onChange={(event)=>setValueInputDescription(event.target.value)}
             />
@@ -110,7 +110,7 @@ const UpdateWork = ({
             <Input
               type="text"
               
-           
+              placeholder="Deploy Url"
               {...register("deploy_url")}
               onChange={(event)=>setValueInputDeploy(event.target.value)}
             />

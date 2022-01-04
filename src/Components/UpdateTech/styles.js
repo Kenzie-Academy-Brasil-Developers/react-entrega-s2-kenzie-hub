@@ -22,7 +22,7 @@ export const Section = styled.section`
   border-radius: 10px;
   color:var(--lightBege);
   display:flex;
-  animation:${slideToDown} 0.7s cubic-bezier( 0.68, -0.55, 0.265, 1.55 ) ;
+  animation:${slideToDown} 0.7s ease-in-out ;
   flex-direction:column;
   background-color: var(--black);
   border:3px solid var(--purple);
